@@ -9,6 +9,11 @@ Du skal finde elementet med id="yellowFigure" og console logge det.
 
 // din kode her
 
+const redFigure = document.getElementById('redFigure')
+const yellowFigure = document.getElementById('yellowFigure')
+
+console.log(redFigure);
+console.log(yellowFigure);
 
 /* opgave 1.2
 Du skal ændre baggrundsfarve på de to elementer du har fundet i opgave 1.1
@@ -17,6 +22,9 @@ farven på elementerne skal være blå. brug evt. elelement.style.backgroundColo
 
 
 // din kode her
+
+redFigure.style.backgroundColor = 'blue'
+yellowFigure.style.backgroundColor = 'blue'
 
 
 
@@ -28,6 +36,15 @@ Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 
 
 // din kode her
+const opgaveTwo = document.getElementById('opgaveTwo')
+
+const createHTwo = document.createElement('h2')
+createHTwo.innerText = 'Opgave 2.1 løsning'
+const createP = document.createElement('p')
+createP.innerText = 'Jeg har løst opgave 2.1'
+
+opgaveTwo.appendChild(createHTwo)
+opgaveTwo.appendChild(createP)
 
 
 // opgave 3 liveHTML lists
@@ -37,6 +54,9 @@ Du skal finde alle elementer med klassen purpleFigures og console logge resultat
 
 // din kode her
 
+const purpleFigures = document.getElementsByClassName('purpleFigures')
+
+console.log(purpleFigures);
 
 /* opgave 3.2
 Du skal finde alle elementer med klassen purpleFigures og bruge array.from() til at konvertere listen
@@ -46,12 +66,19 @@ array.from beskrivelse HER: https://developer.mozilla.org/en-US/docs/Web/JavaScr
 
 // din kode her
 
+const newPurpleFigures = Array.from(purpleFigures)
+
+newPurpleFigures.map((x) => x.style.backgroundColor = 'red')
+
+console.log(newPurpleFigures);
+
 
 /* opgave 3.3
 Brug din array til at ændre h3 elementets, inden i purpleFigures, tekst til RED. du kan bruge
 myElement.children[0].innerHTML til at ændre 1. child elements inner html.
 */
 
+newPurpleFigures.map((x) => x.children[0].innerText = 'RED')
 
 // din kode her
 
@@ -72,6 +99,14 @@ const myData = {
 
 // din kode her
 
+const opgaveFour = document.getElementById('opgaveFour')
 
+const createImage = document.createElement('img')
+createImage.id = myData.name
+createImage.src = myData.image
+createImage.alt = myData.description
+createImage.style.width = '100%'
+
+opgaveFour.appendChild(createImage)
 
 
